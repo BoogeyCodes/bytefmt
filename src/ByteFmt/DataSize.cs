@@ -131,6 +131,7 @@ public readonly struct DataSize : IEquatable<DataSize>, IComparable<DataSize>
     }
 
     public static DataSize operator +(DataSize a, DataSize b) => new(checked(a.Bytes + b.Bytes));
+    public static DataSize operator -(DataSize a, DataSize b) => new(checked(a.Bytes - b.Bytes));
     public static DataSize operator *(DataSize a, int factor) => new(checked(a.Bytes * factor));
     public static bool operator <(DataSize a, DataSize b) => a.Bytes < b.Bytes;
     public static bool operator >(DataSize a, DataSize b) => a.Bytes > b.Bytes;

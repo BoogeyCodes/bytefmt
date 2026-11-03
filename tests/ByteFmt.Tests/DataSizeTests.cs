@@ -54,4 +54,19 @@ public sealed class DataSizeTests
         Assert.Throws<ArgumentOutOfRangeException>(() => new DataSize(-1));
         Assert.Throws<ArgumentOutOfRangeException>(() => DataSize.FromKibibytes(-1));
     }
+
+    [Fact]
+    public void Subtraction_and_zero()
+    {
+        var remaining = DataSize.FromKibibytes(5) - DataSize.FromKibibytes(2);
+        Assert.Equal(new DataSize(3 * 1024), remaining);
+        Assert.Equal(0, DataSize.Zero.Bytes);
+        Assert.Equal(DataSize.FromKibibytes(2), DataSize.FromKibibytes(2) - DataSize.Zero);
+    }
+
+    [Fact]
+    public void Subtraction_below_zero_is_rejected()
+    {
+        Assert.Throws<ArgumentOutOfRangeException>(() => DataSize.FromKibibytes(1) - DataSize.FromKibibytes(2));
+    }
 }
