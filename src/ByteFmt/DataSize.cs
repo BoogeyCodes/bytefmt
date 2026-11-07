@@ -40,6 +40,12 @@ public readonly struct DataSize : IEquatable<DataSize>, IComparable<DataSize>
         return new DataSize(checked((long)Math.Round(value * unit)));
     }
 
+    /// <summary>
+    /// This size as a fraction of <paramref name="whole"/> (0.0 when <paramref name="whole"/> is zero).
+    /// Handy for "this folder is 26% of the total" style breakdowns.
+    /// </summary>
+    public double FractionOf(DataSize whole) => whole.Bytes == 0 ? 0.0 : Bytes / (double)whole.Bytes;
+
     public double Kibibytes => Bytes / (double)(1L << 10);
     public double Mebibytes => Bytes / (double)(1L << 20);
     public double Gibibytes => Bytes / (double)(1L << 30);
