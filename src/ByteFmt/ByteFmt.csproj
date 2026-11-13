@@ -7,9 +7,9 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
     <PackageId>ByteFmt</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <Authors>Abdul Raheem</Authors>
-    <Description>A DataSize value type that parses and formats human byte sizes in binary (KiB) and decimal (KB) units.</Description>
+    <Description>A DataSize value type that parses and formats human byte sizes in binary (KiB) and decimal (KB) units, with comparison, arithmetic and fraction-of helpers.</Description>
     <PackageTags>bytes;filesize;humanize;format;datasize</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/BoogeyCodes/bytefmt</RepositoryUrl>
